@@ -24,7 +24,7 @@ This project is not affiliated with [ImageMagick](https://www.imagemagick.org) ,
 - [Run tests](#run-tests)
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-##Instructions and notes for infurnia
+## Instructions and notes for Infurnia
 
 * The script build.sh has been modified. The main changes is to change the quantum depth flag which was 16 by default and we have changed it to 8
 * We need some .o and .a files and a script copy.sh copies the needed files to a target directory specified as a command line argument for that copy.sh
