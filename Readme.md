@@ -5,28 +5,33 @@ This project is not affiliated with [ImageMagick](https://www.imagemagick.org) ,
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-- [Instructions and Notes for Infurnia](#instructions-and-notes-for-infurnia)
-- [Demos and examples](#demos-and-examples)
-- [Status](#status)
-  - [Image formats supported](#image-formats-supported)
-  - [Features **not** supported](#features-not-supported)
-- [API](#api)
-  - [High level API and utilities](#high-level-api-and-utilities)
-  - [Accessing stdout, stderr, exitCode](#accessing-stdout-stderr-exitcode)
-  - [low-level example](#low-level-example)
-- [Importing the library in your project](#importing-the-library-in-your-project)
-  - [With npm](#with-npm)
-  - [Loading directly from html file](#loading-directly-from-html-file)
-    - [Importing it as JavaScript standard module:](#importing-it-as-javascript-standard-module)
-    - [Using the UMD bundle in AMD projects (requirejs)](#using-the-umd-bundle-in-amd-projects-requirejs)
-    - [Using the UMD bundle without libraries](#using-the-umd-bundle-without-libraries)
-- [Build instructions](#build-instructions)
-- [Run tests](#run-tests)
+- [Web assembly ImageMagick ![Build Status](https://dev.azure.com/oneeyedelf1/wasm-imagemagick/_build/latest?definitionId=1)](#web-assembly-imagemagick-)
+  - [Instructions and notes for Infurnia](#instructions-and-notes-for-infurnia)
+  - [Demos and examples](#demos-and-examples)
+  - [Status](#status)
+    - [Image formats supported](#image-formats-supported)
+    - [Features **not** supported](#features-not-supported)
+  - [API](#api)
+    - [Reference API Documentation](#reference-api-documentation)
+    - [High level API and utilities](#high-level-api-and-utilities)
+    - [Accessing stdout, stderr, exitCode](#accessing-stdout-stderr-exitcode)
+    - [low-level example](#low-level-example)
+  - [Importing the library in your project](#importing-the-library-in-your-project)
+    - [With npm](#with-npm)
+    - [Loading directly from html file](#loading-directly-from-html-file)
+      - [Importing magickApi.js as a JavaScript standard module:](#importing-magickapijs-as-a-javascript-standard-module)
+      - [Below examples need additional files coppied:](#below-examples-need-additional-files-coppied)
+      - [Importing a bundle as a JavaScript standard module:](#importing-a-bundle-as-a-javascript-standard-module)
+      - [Using the UMD bundle in AMD projects (requirejs)](#using-the-umd-bundle-in-amd-projects-requirejs)
+      - [Using the UMD bundle without libraries](#using-the-umd-bundle-without-libraries)
+  - [Build instructions](#build-instructions)
+  - [Run tests](#run-tests)
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Instructions and notes for Infurnia
 
 * The script build.sh has been modified. The main changes is to change the quantum depth flag which was 16 by default and we have changed it to 8
+* allow_memory_growth flag has also been removed from line 7
 * We need some .o and .a files and a script copy.sh copies the needed files to a target directory specified as a command line argument for that copy.sh
 * The original build.sh has been renamed to build-orig.sh
 * The build instruction is: docker run --rm -it --workdir /code -v "$PWD":/code wasm-imagemagick-build-tools bash ./build.sh
